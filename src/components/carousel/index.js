@@ -15,12 +15,12 @@ const Carousel = ({ data }) => {
   const handleChevronClick = (position) => {
     if (position === "right") {
       setActiveBanner((prevActive) => {
-        let next = (prevActive += 1);
+        let next = prevActive + 1;
         return next > data?.length - 1 ? 0 : next;
       });
     } else {
       setActiveBanner((prevActive) => {
-        let previous = (prevActive -= 1);
+        let previous = prevActive - 1;
         return previous < 0 ? data?.length - 1 : previous;
       });
     }

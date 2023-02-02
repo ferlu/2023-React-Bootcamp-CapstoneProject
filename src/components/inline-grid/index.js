@@ -10,6 +10,7 @@ const InlineGrid = ({ data }) => {
       {data?.map((item) => {
         const { name, main_image: mainImg } = item.data;
         const imgStyle = {
+          // eslint-disable-next-line max-len
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${mainImg.url})`,
           height: mainImg.height,
           width: mainImg.width,
