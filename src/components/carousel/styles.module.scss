@@ -67,8 +67,8 @@
 
 h2 {
   @extend %header;
-  font-size: 80px;
-  letter-spacing: -5px;
+  font-size: 5rem;
+  letter-spacing: calc(var(--spacing1) * -1);
   font-style: italic;
   color: var(--black);
   border-bottom: 3px solid var(--blue);
@@ -76,7 +76,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0;
@@ -85,9 +85,9 @@ h3 {
 
 .description {
   color: var(--blue);
-  font-size: 16px;
+  font-size: 1rem;
   mix-blend-mode: hard-light;
-  padding-top: 32px;
+  padding-top: var(--spacing5);
   text-justify: distribute-all-lines;
 }
 
@@ -101,15 +101,15 @@ h3 {
 
   button {
     background-color: var(--beige);
-    width: 24px;
-    height: 24px;
+    width: var(--spacing4);
+    height: var(--spacing4);
     display: flex;
     align-items: center;
     padding: 0;
     justify-content: center;
 
     &:hover {
-      box-shadow: 4px 4px transparent;
+      box-shadow: var(--spacing1) var(--spacing1) transparent;
       background-color: darken($color: #ac9988, $amount: 20);
     }
 
@@ -132,7 +132,7 @@ h3 {
 
 .indicator {
   position: absolute;
-  padding: 4px;
+  padding: var(--spacing1);
   z-index: 1;
   background: #00000038;
   bottom: 0;
@@ -142,9 +142,9 @@ h3 {
   text-align: center;
 
   button {
-    margin: 0 16px;
-    width: 20px;
-    height: 20px;
+    margin: 0 var(--spacing3);
+    width: var(--spacing6);
+    height: var(--spacing6);
     &:hover {
       background-color: transparent;
       box-shadow: none;
@@ -159,8 +159,8 @@ h3 {
 
   svg {
     color: var(--white);
-    width: 20px;
-    height: 20px;
+    width: var(--spacing6);
+    height: var(--spacing6);
     fill: transparent;
     transition: all 0.3s ease-in-out;
 

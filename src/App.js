@@ -1,4 +1,5 @@
 import "./App.scss";
+import Layout from "./layout/Layout";
 import Home from "./pages/home";
 import { useFeaturedBanners } from "./utils/hooks/useFeaturedBanners";
 
@@ -8,7 +9,9 @@ function App() {
 
   return (
     <div className='App'>
-      <Home />
+      <Layout>
+        <Home />
+      </Layout>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 // @vendors
-import { object, string } from "prop-types";
+import { object } from "prop-types";
 
 // @styles
 import styles from "./styles.module.scss";
 
-const GridITem = ({ data }) => {
+const GridItem = ({ data }) => {
   const { name, category, price, mainimage: mainImg } = data;
   const imgStyle = {
     backgroundImage: `url(${mainImg.url})`,
@@ -23,12 +23,12 @@ const GridITem = ({ data }) => {
   );
 };
 
-GridITem.propTypes = {
+GridItem.propTypes = {
   data: object,
 };
 
-GridITem.defaultProps = {
+GridItem.defaultProps = {
   data: {},
 };
 
-export default GridITem;
+export default GridItem;

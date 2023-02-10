@@ -2,7 +2,7 @@
 import { array, string } from "prop-types";
 
 // @components
-import GridITem from "./grid-item";
+import GridItem from "./grid-item";
 
 // @styles
 import styles from "./styles.module.scss";
@@ -14,7 +14,7 @@ const MainGrid = ({ data, title }) => {
       <div className={styles.container}>
         {data?.map((item) => (
           <div key={item.id}>
-            <GridITem data={item.data} />
+            <GridItem data={item.data} />
           </div>
         ))}
       </div>

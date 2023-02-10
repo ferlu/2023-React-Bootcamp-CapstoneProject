@@ -1,4 +1,5 @@
 :root {
+  // colors
   --white: #ffffff;
   --black: #25242b;
   --gray: #c4c4c4;
@@ -7,12 +8,17 @@
   --blue: #94a8bb;
   --beige: #ac9988;
   --dark-green: #64806b;
+  // spacing
+  --spacing1: 4px;
+  --spacing2: 8px;
+  --spacing3: 16px;
+  --spacing4: 24px;
+  --spacing5: 32px;
+  --spacing6: 20px;
+  --spacing7: 20px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
+*,
 html,
 body,
 #root {
@@ -21,16 +27,16 @@ body,
 
 button {
   border: none;
-  min-width: 16px;
-  min-height: 16px;
+  min-width: var(--spacing3);
+  min-height: var(--spacing3);
   cursor: pointer;
-  padding: 4px;
+  padding: var(--spacing1);
   transition: all 0.3s ease-in-out;
-  box-shadow: 4px 4px transparent;
+  box-shadow: var(--spacing1) var(--spacing1) transparent;
   background-color: transparent;
 
   &:hover {
-    box-shadow: 4px 4px var(--pink);
+    box-shadow: var(--spacing1) var(--spacing1) var(--pink);
     background-color: var(--green);
   }
 }

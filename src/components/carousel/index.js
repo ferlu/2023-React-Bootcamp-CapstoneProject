@@ -9,39 +9,45 @@ import { Heart } from "../../assets/icons/heart";
 // @styles
 import styles from "./styles.module.scss";
 
+var classNames = require("classnames");
+
 const Carousel = ({ data }) => {
   const [activeBanner, setActiveBanner] = useState(0);
 
-  const handleChevronClick = (position) => {
-    if (position === "right") {
-      setActiveBanner((prevActive) => {
-        let next = prevActive + 1;
-        return next > data?.length - 1 ? 0 : next;
-      });
-    } else {
-      setActiveBanner((prevActive) => {
-        let previous = prevActive - 1;
-        return previous < 0 ? data?.length - 1 : previous;
-      });
-    }
+  const handleNextClick = () => {
+    setActiveBanner((prevActive) => {
+      let next = prevActive + 1;
+      return next > data?.length - 1 ? 0 : next;
+    });
+  };
+
+  const handlePrevClick = () => {
+    setActiveBanner((prevActive) => {
+      let previous = prevActive - 1;
+      return previous < 0 ? data?.length - 1 : previous;
+    });
   };
 
   const chevrons = (
     <div className={styles.chevron}>
-      <button onClick={() => handleChevronClick("left")}>
+      <button onClick={handlePrevClick}>
         <ChevronLeft />
       </button>
-      <button onClick={() => handleChevronClick("right")}>
+      <button onClick={handleNextClick}>
         <ChevronRight />
       </button>
     </div>
   );
 
   const indicator = data?.map((banner, i) => {
+    var indicatorClass = classNames({
+      [styles.fill]: i === activeBanner,
+    });
+
     return (
       <button
         key={`${banner.id}-indicator`}
-        className={i === activeBanner ? styles.fill : ""}
+        className={indicatorClass}
         onClick={() => setActiveBanner(i)}>
         <Heart />
       </button>
@@ -50,9 +56,9 @@ const Carousel = ({ data }) => {
 
   return (
     <header className={styles.carouselContainer}>
-      {data?.map((banner, i) => {
+      {data.map((banner, i) => {
         let { title, description, main_image: mainImg } = banner.data;
-        const formatTitle = title.split("-");
+        const [itemTitle, subtitle] = title.split("-");
 
         const imgStyle = {
           backgroundImage: `url(${mainImg.url})`,
@@ -66,10 +72,10 @@ const Carousel = ({ data }) => {
             className={`${
               i === activeBanner ? styles.bannerWrapperVisible : styles.bannerWrapperHidden
             }`}>
-            <div className={`${styles.container}`}>
+            <div className={styles.container}>
               <div className={styles.info}>
-                <h3>{formatTitle[0]}</h3>
-                <h2>{formatTitle[1]}</h2>
+                <h3>{itemTitle}</h3>
+                <h2>{subtitle}</h2>
                 <p className={styles.description}>{description[0].text}</p>
               </div>
               <div className={styles.bgImg} style={imgStyle} />

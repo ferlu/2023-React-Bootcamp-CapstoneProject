@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: var(--spacing3) var(--spacing7);
   position: sticky;
   top: 0;
   background-color: var(--white);
@@ -13,7 +13,7 @@
   font-family: "Bodoni Moda";
   font-weight: 800;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: italic;
 }
 
@@ -29,6 +29,6 @@
 }
 
 .cart {
-  width: 32px;
-  height: 32px;
+  min-width: var(--spacing5);
+  height: var(--spacing5);
 }
