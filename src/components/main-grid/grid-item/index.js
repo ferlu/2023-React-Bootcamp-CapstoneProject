@@ -4,8 +4,7 @@ import { object } from "prop-types";
 // @styles
 import styles from "./styles.module.scss";
 
-const GridItem = ({ data }) => {
-  const { name, category, price, mainimage: mainImg } = data;
+const GridItem = ({ name, category, price, mainImg }) => {
   const imgStyle = {
     backgroundImage: `url(${mainImg.url})`,
     height: mainImg.height,

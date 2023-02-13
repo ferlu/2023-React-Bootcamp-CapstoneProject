@@ -1,3 +1,5 @@
+@import "../../variables";
+
 %header {
   font-family: "Bodoni Moda";
   font-weight: 100;
@@ -169,5 +171,22 @@ h3 {
       fill: var(--white);
       box-shadow: none;
     }
+  }
+}
+
+@media (max-width: $media-query-xs) {
+  .bgImg {
+    display: none;
+  }
+
+  .info {
+    max-width: 100%;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .carouselContainer {
+    height: 500px;
   }
 }

@@ -12,11 +12,18 @@ const MainGrid = ({ data, title }) => {
     <div className={styles.mainContainer}>
       <h3>{title}</h3>
       <div className={styles.container}>
-        {data?.map((item) => (
-          <div key={item.id}>
-            <GridItem data={item.data} />
-          </div>
-        ))}
+        {data?.map((item) => {
+          const { name, category, price, mainimage: mainImg } = item.data;
+          return (
+            <GridItem
+              key={item.id}
+              name={name}
+              category={category}
+              price={price}
+              mainImg={mainImg}
+            />
+          );
+        })}
       </div>
     </div>
   );
@@ -24,12 +31,11 @@ const MainGrid = ({ data, title }) => {
 
 MainGrid.propTypes = {
   data: array.isRequired,
-  title: string,
+  title: string.isRequired,
 };
 
 MainGrid.defaultProps = {
   data: [],
-  title: "Our Products",
 };
 
 export default MainGrid;
