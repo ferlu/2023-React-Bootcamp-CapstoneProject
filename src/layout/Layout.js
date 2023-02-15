@@ -8,10 +8,10 @@ import Footer from "./footer";
 // @styles
 import styles from "./styles.module.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ render, children }) => {
   return (
     <>
-      <Header />
+      <Header render={render} />
       <div className={styles.container}>{children}</div>
       <Footer />
     </>

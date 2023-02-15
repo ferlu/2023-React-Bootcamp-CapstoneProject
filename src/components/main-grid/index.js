@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 const MainGrid = ({ data, title }) => {
   return (
     <div className={styles.mainContainer}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <div className={styles.container}>
         {data?.map((item) => {
           const { name, category, price, mainimage: mainImg } = item.data;

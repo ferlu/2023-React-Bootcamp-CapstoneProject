@@ -18,11 +18,25 @@
   --spacing7: 20px;
 }
 
-*,
-html,
-body,
-#root {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+body,
+#root,
+.App {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
 
 button {

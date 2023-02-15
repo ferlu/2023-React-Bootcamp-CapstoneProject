@@ -1,5 +1,9 @@
 // @vendors
 import React from "react";
+import { func } from "prop-types";
+
+// @utils
+import { ALL_PRODUCTS } from "../../utils/constants";
 
 // @mocks
 import banners from "../../mocks/en-us/featured-banners.json";
@@ -14,14 +18,21 @@ import MainGrid from "../../components/main-grid";
 // @styles
 import styles from "./styles.module.scss";
 
-const Home = () => {
+const Home = ({ render }) => {
   return (
     <div className={styles.container}>
       <Carousel data={banners.results} />
       <InlineGrid data={categories.results} />
       <MainGrid data={products.results} title='Our Products' />
+      <button onClick={() => render("product-list")}>{ALL_PRODUCTS}</button>
     </div>
   );
 };
+
+Home.propTypes = {
+  render: func.isRequired,
+};
+
+Home.defaultProps = {};
 
 export default Home;

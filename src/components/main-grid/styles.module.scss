@@ -3,10 +3,16 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  h3 {
+  h2 {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--black);
+    border: none;
     text-align: center;
-    padding: var(--spacing3);
-    margin: var(--spacing2) 0;
+    padding: var(--spacing5);
+    margin-top: calc(2 * var(--spacing5));
+    margin-bottom: calc(4 * var(--spacing1));
   }
 }
 
@@ -14,29 +20,45 @@
   display: grid;
   grid-template-rows: auto;
   gap: 1rem;
+  margin: var(--spacing2) 0;
   justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: overlay;
+  height: 20rem;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--green);
+  }
 }
 
 @media (min-width: $media-query-xs) {
-  .container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (min-width: $media-query-sm) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: $media-query-md) {
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: $media-query-lg) {
+@media (min-width: $media-query-sm) {
   .container {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: $media-query-md) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: $media-query-lg) {
+  .container {
+    grid-template-columns: repeat(8, 1fr);
   }
 }
