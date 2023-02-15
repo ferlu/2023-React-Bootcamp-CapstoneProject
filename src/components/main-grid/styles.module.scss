@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    text-align: center;
+    padding: var(--spacing3);
+    margin: var(--spacing2) 0;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1rem;
+  justify-items: center;
+}
+
+@media (min-width: $media-query-xs) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: $media-query-sm) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $media-query-md) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: $media-query-lg) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

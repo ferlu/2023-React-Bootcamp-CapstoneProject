@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.container {
+  padding: var(--spacing5) var(--spacing7);
+  background-color: var(--green);
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing7);
+  font-size: 1rem;
+}
+
+.logo {
+  font-family: "Bodoni Moda";
+  font-weight: 600;
+  font-style: italic;
+  background-color: var(--pink);
+}
+
+.footer {
+  font-size: 1rem;
+  @media (min-width: $media-query-xs) {
+    font-size: 1rem;
+    width: 100%;
+  }
+}

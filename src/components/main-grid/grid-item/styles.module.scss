@@ -1,0 +1,61 @@
+%background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -28px;
+}
+
+.item {
+  @extend %background;
+  cursor: pointer;
+  text-align: center;
+  width: 280px;
+  height: 280px;
+  transition: all 0.4s ease-in-out;
+  background-blend-mode: multiply;
+  background-color: #ffffff00;
+
+  &:hover {
+    transition: all 0.4s ease-in-out;
+    background-blend-mode: multiply;
+    background-color: #c4630bc7;
+
+    .itemInfo {
+      opacity: 1;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
+
+.itemInfo {
+  padding: var(--spacing6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 100;
+  font-family: "Bodoni moda";
+  font-style: italic;
+  text-transform: lowercase;
+  line-height: var(--spacing7);
+}
+
+.category {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 100;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
