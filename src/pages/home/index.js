@@ -24,7 +24,9 @@ const Home = ({ render }) => {
       <Carousel data={banners.results} />
       <InlineGrid data={categories.results} />
       <MainGrid data={products.results} title='Our Products' />
-      <button onClick={() => render("product-list")}>{ALL_PRODUCTS}</button>
+      <button className={styles.productList} onClick={() => render("product-list")}>
+        {ALL_PRODUCTS}
+      </button>
     </div>
   );
 };
