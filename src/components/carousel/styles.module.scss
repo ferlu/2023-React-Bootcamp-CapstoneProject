@@ -1,192 +1,191 @@
 @import "../../variables";
 
 %header {
-  font-family: "Bodoni Moda";
-  font-weight: 100;
-  text-transform: lowercase;
+	font-weight: 100;
+	text-transform: lowercase;
 }
 
 /* Fading animation */
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0.9;
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0.9;
+	}
+	to {
+		opacity: 1;
+	}
 }
 @keyframes fadeIn {
-  from {
-    opacity: 0.9;
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0.9;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .bannerWrapper {
-  &Visible,
-  &Hidden {
-    width: 100%;
-    height: 100%;
-  }
-  &Visible {
-    display: flex;
-  }
-  &Hidden {
-    display: none;
-  }
+	&Visible,
+	&Hidden {
+		width: 100%;
+		height: 100%;
+	}
+	&Visible {
+		display: flex;
+	}
+	&Hidden {
+		display: none;
+	}
 }
 
 .carouselContainer {
-  width: 100%;
-  height: 700px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  -webkit-animation: fadeIn 2s;
-  animation: fadeIn 2s;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	-webkit-animation: fadeIn 2s;
+	animation: fadeIn 2s;
+	justify-content: space-evenly;
 }
 
 .bgImg {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  height: 100%;
-
-  // background details
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 0.6;
+	height: 90%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 h2 {
-  @extend %header;
-  font-size: 5rem;
-  letter-spacing: calc(var(--spacing1) * -1);
-  font-style: italic;
-  color: var(--black);
-  border-bottom: 3px solid var(--blue);
-  line-height: 80%;
+	@extend %header;
+	font-size: 5rem;
+	letter-spacing: calc(var(--spacing1) * -1);
+	color: var(--black);
+	border-bottom: 3px solid var(--blue);
+	line-height: 80%;
+	font-weight: 600;
 }
 
 h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 0;
-  color: var(--beige);
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 0;
+	color: var(--beige);
 }
 
 .description {
-  color: var(--blue);
-  font-size: 1rem;
-  mix-blend-mode: hard-light;
-  padding-top: var(--spacing5);
-  text-justify: distribute-all-lines;
+	color: var(--blue);
+	font-size: 1rem;
+	mix-blend-mode: hard-light;
+	padding-top: var(--spacing5);
+	text-justify: distribute-all-lines;
 }
 
 .chevron {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: space-between;
 
-  button {
-    background-color: var(--beige);
-    width: var(--spacing4);
-    height: var(--spacing4);
-    display: flex;
-    align-items: center;
-    padding: 0;
-    justify-content: center;
+	button {
+		background-color: var(--beige);
+		width: calc(1.2 * var(--spacing5));
+		height: calc(1.2 * var(--spacing5));
+		display: flex;
+		align-items: center;
+		padding: 0;
+		justify-content: center;
+		border-radius: 40% 90% 90% 40% / 90% 90% 40% 40%;
 
-    &:hover {
-      box-shadow: var(--spacing1) var(--spacing1) transparent;
-      background-color: darken($color: #ac9988, $amount: 20);
-    }
+		&:hover {
+			box-shadow: var(--spacing1) var(--spacing1) transparent;
+			background-color: darken($color: #ac9988, $amount: 20);
+		}
 
-    svg path {
-      color: var(--white);
-    }
-  }
+		svg path {
+			color: var(--white);
+		}
+	}
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: end;
-  margin: 2rem;
-  flex: 0.5;
-  max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	text-align: end;
+	margin: 2rem;
+	flex: 0.5;
+	max-width: 420px;
 }
 
 .indicator {
-  position: absolute;
-  padding: var(--spacing1);
-  z-index: 1;
-  background: #00000038;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
+	position: absolute;
+	padding: var(--spacing1);
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
 
-  button {
-    margin: 0 var(--spacing3);
-    width: var(--spacing3);
-    height: var(--spacing3);
-    &:hover {
-      background-color: transparent;
-      box-shadow: none;
-    }
-  }
+	button {
+		margin: 0 var(--spacing3);
+		width: var(--spacing3);
+		height: var(--spacing3);
+		&:hover {
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
 
-  .fill {
-    svg {
-      fill: var(--white);
-    }
-  }
+	.fill {
+		svg {
+			fill: var(--blue);
+		}
+	}
 
-  svg {
-    color: var(--white);
-    width: var(--spacing6);
-    height: var(--spacing6);
-    fill: transparent;
-    transition: all 0.3s ease-in-out;
+	svg {
+		color: var(--blue);
+		width: calc(2 * var(--spacing6));
+		height: calc(2 * var(--spacing6));
+		fill: transparent;
+		transition: all 0.3s ease-in-out;
 
-    &:hover {
-      transition: all 0.3s ease-in-out;
-      fill: var(--white);
-      box-shadow: none;
-    }
-  }
+		&:hover {
+			transition: all 0.3s ease-in-out;
+			fill: var(--blue);
+			box-shadow: none;
+		}
+	}
 }
 
 @media (max-width: $media-query-xs) {
-  .bgImg {
-    display: none;
-  }
+	.bgImg {
+		display: none;
+	}
 
-  .info {
-    max-width: 100%;
-    flex: 1;
-    align-items: center;
-    text-align: center;
-  }
+	.info {
+		max-width: 100%;
+		flex: 1;
+		align-items: center;
+		text-align: center;
+	}
 
-  .carouselContainer {
-    height: 500px;
-  }
+	.carouselContainer {
+		height: 500px;
+	}
 }

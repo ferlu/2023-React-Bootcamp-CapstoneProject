@@ -19,20 +19,27 @@ import MainGrid from "../../components/main-grid";
 import styles from "./styles.module.scss";
 
 const Home = ({ render }) => {
-  return (
-    <div className={styles.container}>
-      <Carousel data={banners.results} />
-      <InlineGrid data={categories.results} />
-      <MainGrid data={products.results} title='Our Products' />
-      <button className={styles.productList} onClick={() => render("product-list")}>
-        {ALL_PRODUCTS}
-      </button>
-    </div>
-  );
+	return (
+		<div className={styles.container}>
+			<Carousel data={banners.results} />
+			<InlineGrid data={categories.results} />
+			<div className={styles.gridContainer}>
+				<MainGrid
+					data={products.results}
+					title='Our Products'
+				/>
+			</div>
+			<button
+				className={styles.productList}
+				onClick={() => render("product-list")}>
+				{ALL_PRODUCTS}
+			</button>
+		</div>
+	);
 };
 
 Home.propTypes = {
-  render: func.isRequired,
+	render: func.isRequired,
 };
 
 Home.defaultProps = {};

@@ -1,0 +1,16 @@
+.category {
+	font-size: 1.5rem;
+	box-shadow: 8px 8px transparent;
+	font-weight: 700;
+	transition: all 0.3s ease-in-out;
+
+	&.active {
+		transition: all 0.3s ease-in-out;
+		color: var(--dark-green);
+
+		background-color: var(--green);
+	}
+	&:hover {
+		transition: all 0.3s ease-in-out;
+	}
+}

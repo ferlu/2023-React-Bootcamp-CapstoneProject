@@ -9,13 +9,13 @@ import Footer from "./footer";
 import styles from "./styles.module.scss";
 
 const Layout = ({ render, children }) => {
-  return (
-    <>
-      <Header render={render} />
-      <div className={styles.container}>{children}</div>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header render={render} />
+			{children}
+			<Footer />
+		</>
+	);
 };
 
 export default Layout;

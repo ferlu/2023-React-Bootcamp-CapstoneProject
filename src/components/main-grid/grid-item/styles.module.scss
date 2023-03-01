@@ -1,60 +1,61 @@
 %background {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .item {
-  @extend %background;
-  cursor: pointer;
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  transition: all 0.4s ease-in-out;
-  background-blend-mode: multiply;
-  background-color: #ffffff00;
-  border: 2px solid transparent;
+	@extend %background;
+	cursor: pointer;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+	transition: all 0.4s ease-in-out;
+	background-blend-mode: darken;
+	background-color: var(--light-blue);
+	border: 2px solid transparent;
+	border-radius: var(--spacing2);
 
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    background-blend-mode: multiply;
-    background-color: #bc6707;
-    border: 2px solid #bc6707;
+	&:hover {
+		transition: all 0.4s ease-in-out;
+		background-blend-mode: darken;
+		background-color: #7b8b9b;
+		border: 2px solid var(--blue);
 
-    .itemInfo {
-      opacity: 1;
-      transition: all 0.4s ease-in-out;
-    }
-  }
+		.itemInfo {
+			opacity: 1;
+			transition: all 0.4s ease-in-out;
+		}
+	}
 }
 
 .itemInfo {
-  padding: var(--spacing3);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  color: var(--white);
-  opacity: 0;
-  text-align: left;
-  transition: all 0.4s ease-in-out;
+	padding: var(--spacing3);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	color: var(--white);
+	opacity: 0;
+	text-align: left;
+	transition: all 0.4s ease-in-out;
 }
 
 .name {
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: "Outfit";
-  text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: bold;
+	font-family: "Outfit";
+	text-transform: uppercase;
 }
 
 .category {
-  font-size: 1rem;
-  text-transform: capitalize;
-  font-weight: 300;
+	font-size: 1rem;
+	text-transform: capitalize;
+	font-weight: 300;
 }
 
 .price {
-  font-size: 1rem;
-  font-weight: 700;
+	font-size: 1rem;
+	font-weight: 700;
 }

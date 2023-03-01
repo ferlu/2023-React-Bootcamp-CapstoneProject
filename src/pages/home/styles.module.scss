@@ -1,11 +1,30 @@
 .container {
-  padding: var(--spacing3) var(--spacing7);
-  text-align: center;
+	padding: var(--spacing3) var(--spacing6);
+	text-align: center;
 
-  .productList {
-    margin: var(--spacing2) 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: var(--spacing3);
-  }
+	.productList {
+		margin: var(--spacing2) 0;
+		font-size: 1.5rem;
+		font-weight: 600;
+		padding: var(--spacing3);
+	}
+}
+
+.gridContainer {
+	max-height: 22rem;
+	overflow: overlay;
+	display: flex;
+	margin-top: calc(3 * var(--spacing5));
+	margin-bottom: calc(1 * var(--spacing5));
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--blue);
+	}
 }
